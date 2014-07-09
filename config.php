@@ -19,7 +19,7 @@
 
 /* ---------- DB ---------- */
 /* mysql or sqlite */
-$config['db']['type'] = null;
+$config['db']['type'] = mysql;
 
 /* show all queries */
 $config['db']['debug'] = false;
@@ -31,14 +31,17 @@ $config['db']['persistent'] = false;
 /* for sqlite */
 $config['db']['file'] = null;
 
+$heroku_mysql_string = getenv('CLEARDB_DATABASE_URL');
+$ra = preg_split('/[:\/@?]/', $heroku_mysql_string);
+
 /* for mysql */
-$config['db']['user'] = null;
-$config['db']['pass'] = null;
-$config['db']['name'] = null;
+$config['db']['user'] = $ra[3];
+$config['db']['pass'] = $ra[4];
+$config['db']['name'] = $ra[6];
 /* 'socket' takes precedence over 'host'
 	(it is obviously not possible to use both at once) */
 $config['db']['socket'] = null;
-$config['db']['host'] = null;
+$config['db']['host'] = $ra[5];
 
 /* ---------- MEMCACHE ---------- */
 $config['memcache']['enabled'] = false;
