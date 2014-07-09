@@ -57,9 +57,10 @@ a {
 }
 
 .bar li a {
-	color: #4d73a7;
+	color: white;
 	text-decoration: none;
 	padding: 4px 7px;
+	text-shadow: 0 2px 1px #4d73a7;
 }
 
 .bar li a.submit {
