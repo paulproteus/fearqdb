@@ -64,7 +64,6 @@ class Settings {
 		global $db;
 
 		$url = sprintf('%s%s', $_SERVER['HTTP_HOST'], preg_replace('/index\.php$/', '', $_SERVER['SCRIPT_NAME']));
-		print($url);
 		$results = $db->get_row(Settings::READ, array(
 			array(':url', $url, PDO::PARAM_STR)
 		));
