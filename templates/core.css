@@ -110,7 +110,11 @@ a {
 }
 
 .content {
-	padding: 30px 35px 35px 30px;
+/*
+ * Use margin, instead of padding, so that you can click the
+ * nav links.
+ */
+	margin: 30px 35px 35px 30px;
 }
 
 .quote {
