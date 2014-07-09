@@ -57,7 +57,7 @@ if (isset($params[1])) {
 			$html->do_sysmsg(_('Oops!'), _('Your quote has not been sent. Maybe it was too short?'), 200);
 			break;
 		case 'sent':
-			$html->do_sysmsg(_('Quote sent!'), _('Your quote has been submitted and is now pending approval!'), 200);
+			$html->do_sysmsg(_('Quote sent!'), _('Your quote has been submitted and is now pending approval! Ping paulproteus on IRC and ask them to approve it.'), 200);
 			break;
 		default:
 			$nick = htmlspecialchars($params[1]);
